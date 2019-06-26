@@ -1,120 +1,229 @@
-# ![](https://www.lpice.eu/fileadmin/_processed_/csm_LPIC-DevOpsToolsEngineer_43de3c4735.jpg) myE701 - Exam 701: DevOps Tools Engineer 
+# myE701 - Exam 701: DevOps Tools Engineer ![](https://www.lpice.eu/fileadmin/_processed_/csm_LPIC-DevOpsToolsEngineer_43de3c4735.jpg)  
 
 Beispiel für einen Aufbau einer Dokumention des Lern- und Entwicklungsprozesses mit Ausgesuchten Unterkapiteln aus dem LPI E701 Exam
-
-## Einrichtung forken dieses GitHub Repository für Dokumentation (Kapitel kann in der Kopie gelöscht werden)
-
-Als erster Schritt muss ein GitHub-Account eingerichtet werden. Dieser dient uns später als "Cloud-Speicher" unserer Dokumentation und weiteren Dateien.
-
-Folgende Arbeiten müssen gemacht werden:
-
-**Account erstellen**
-
-1. Auf www.github.com ein Benutzerkonto erstellen (Angabe von Username, E-Mail und Passwort)
-2. E-Mail zur Verifizierung des Kontos bestätigen und anschliessend auf GitHub anmelden
-
-**Forken dieses Repositories**
-
-1. Auf Repository [myE701](https://github.com/w901-fr19-mi/myE701) wechseln.
-2. Klicken Sie oben rechts auf der Seite auf `Fork` .
-
-![](https://help.github.com/assets/images/help/repository/fork_button.jpg)
-
-Das ist es! Jetzt haben Sie einen `Fork` (Kopie) des Original myE010 Repository und können dessen Inhalte verändern.
-
-Weitere Möglichkeiten siehe [Modul M300 - 10 Toolumgebung](https://github.com/mc-b/M300/tree/master/10-Toolumgebung)
-
-## Dokumentation (Kapitel kann in der Kopie gelöscht werden)
-
-Die Dokumentation erfolgt im Markdownformat, dem Standard Wiki Format von github. Dies geht am Einfachsten direkt auf github.com.
-
-Eine Markdown Übersicht / Syntax etc. finden Sie auf:
-* [Markdown Syntax inkl. Online Demo](http://markdown-syntax.de/Was-ist-Markdown/)
-* [Dokumentation aus dem Modul M300](https://github.com/mc-b/M300/blob/master/80-Ergaenzungen/vcs/03-Markdown.md) 
-
-## Installation (Kapitel kann in der Kopie gelöscht werden)
-
-Hier lohnt es sich Vagrant zu verwenden. Damit kann gleichzeitig eine VM (Ubuntu 16.x) mit Docker und Kubernetes aufgesetzt werden oder mittels des Projektes [lernkube](https://github.com/mc-b/lernkube) ein Kubernetes Master. 
-
-**Vagrant (lernkube) Installation**
-
-Zuerst muss folgende SW Installiert werden:
-* [Git/Bash](https://git-scm.com/downloads)
-* [Vagrant](https://www.vagrantup.com/) 
-* [VirtualBox](https://www.virtualbox.org/)
-
-Wechseln Sie auf die Kommandozeile (*bash* oder *PowerShell*) und klonen des Projekt `lernkube` und erstellen die VM(s):
-
-	git clone https://github.com/mc-b/lernkube
-	cd lernkube
-	cp templates/DUK.yaml config.yaml
-	vagrant plugin install vagrant-disksize
-	vagrant up
-
-Während der Installation werden im Verzeichnis `lernkube` mehrere `.bat` Dateien und die Client Programme `docker`, `kubectl`, `helm` etc. erzeugt.
-
-Die Bezeichnungen deren Funktion kann mittels `kubeps.bat` (*PowerShell*) oder `source kubeenv` (*Bash*) angezeigt werden. Die Scripts setzen gleichzeitig die Umgebungsvariablen, damit vom Notebook Docker und Kubernetes (`kubectl`) an die VM weitergereicht werden können.
-
-Beispiele:
-
-	docker images # zeigt alle Container Images an
-	kubectl get all # zeigt alle Kubernetes Ressourcen an.
-	
-**Alternative Installationen** 
-
-Alternativ kann [Docker for Windows/Mac](https://www.docker.com/products/docker-desktop) oder [Minikube](https://github.com/kubernetes/minikube) verwendet werden. Diese Umgebungen sind aber nicht Cluster fähig und erfordern [Feintuning](https://github.com/mc-b/lernkube/tree/master/docker4windows/).
-
-Oder die gleiche Umgebung wie mit lernkube auf den Cloud Plattformen von Amazon und Microsoft eingerichtet werden.
-
-* [Amazon AWS Cloud](https://github.com/mc-b/lernkube/tree/master/aws/) - hat noch Probleme mit Datenspeicherung und LoadBalancer.
-* [Microsoft Azure Cloud](https://github.com/mc-b/lernkube/tree/master/azure/)	 
-
-**Weitere nützliche Programme**
-
-* [Windows SSH Client, putty](https://putty.org)
-* [Grafischer Windows SFTP Client, Bitvise SSH Client](https://www.bitvise.com/ssh-client-download)
-* [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Fahrplan
 ***
 
-
 | Datum | behandelte Unterrichtsinhalte: | Gewichtung |
 | -------- | ------ | -------- |
-| 15.05.19 | Installation SW, Einrichten Linux VM(s)<br>[701.1 Modern Software Development, 1. Teil](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 6 |
-| 22.05.19 | [701.1 Modern Software Development, 2. Teil](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 4 |
-| 29.05.19 | [701.3 Source Code Management](https://github.com/w901-fr19-mi/E701#7013-source-code-management) | 5 | 
-| 05.06.19 | 702.1 Container Usage, 1. Teil | 7 |
-| 12.06.19 | 702.1 Container Usage, 2. Teil | (7) |
-| 19.06.19 | 702.2 Container Deployment and Orchestration | 5 |
+| 15.05.19 | Installation SW, Einrichten Linux VM(s)<br> [701.3 Source Code Management](https://github.com/w901-fr19-mi/E701#7013-source-code-management)  | 5 |
+| 22.05.19 | [701.1 Modern Software Development](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 6 |
+| 29.05.19 | [702.2 Container Deployment and Orchestration](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 5 | 
+| 05.06.19 | [704.1 Ansible](https://github.com/w901-fr19-mi/E701#7011-modern-software-development)  | 8 | 
+| 12.06.19 | [703.2 Cloud Deployment](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 2 |
+| 19.06.19 | [702.3 Container Infrastructure](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 4 |
 | 26.06.19 | LB1 Theoretische Prüfung und Abschluss LB2 | - |
-| 03.07.19 | Sommersporttage | - |
-|          | Total Punkte | 27 (34) !
+| 03.07.19 | Lehrerkonevent | - |
+| 10.07.19 | Sommersporttage | - |
+|          | Total Punkte | 30
 
 Kapitel aus E701 wurden in der Gruppe mit .... erarbeitet. Davon sind mindestens 14 Punkte selbständig erarbeitet worden. 
 
-## Dokumention des Lern- und Entwicklungsprozesses
-***
+# Dokumention des Lern- und Entwicklungsprozesses
 
-### Kapitel: 702.1 Container Usage (Status: In Arbeit)
+## 701.3 Source Code Management (Status: In Arbeit)
 
-**Weight**: 7 (7)
+**Weight**: 5
 
-**Beschreibung** Gegenüberstellung welche Linux Technologien für Container verwendet werden.
+**Beschreibung und Ziel** 
+Candidates should be able to use Git to manage and share source code. This includes creating and contributing to a repository as well as the usage of tags, branches and remote repositories. Furthermore, the candidate should be able to merge files and resolve merging conflicts.
 
-**Tagesziele**, z.B. Erstellung einer Tabelle Linux - Container. 
+Key Knowledge Areas: 
+* Understand Git concepts and repository structure
+* Manage files within a Git repository
+* Manage branches and tags
+* Work with remote repositories and branches as well as submodules
+* Merge files and branches
+* Awareness of SVN and CVS, including concepts of centralized and distributed SCM solutions
 
-**Vorgehen**, z.B. Studieren Background Linux Namespaces vs. Container, UnionFS vs. Container Layer, Unix Prozesse (Jobs) vs. Docker run/start/stop
+The following is a partial list of the used files, terms and utilities:
+* git
+* .gitignore
+
+**Beispiele und Arbeitsergebnisse** <br>
+Das Resultat kann man beim Schluss dieses Moduls erkennen, da ich laufend mit git arbeiten werde. Folgende Theorie Punkte werde ich genauer anschauen:
+
+Remote Repos
+
+Branches <br>
+Wenn man vom einer Hauptversion etwas testen will, kann man ein Branch machen. Das heisst es wird eine Kopie zusagen erstellt, bei dem man alles bearbeiten kann ohne dabei das Original zu verändern.
+
+Tags <br>
+Tags werden benutzt um wichtige Punkte zu markieren (z.B. die Version eines Files). Es wird dabei unter zwei Typen unterschieden: lightweight und unnotated.<br>
+Um die von git verfügbaren tag aufzulisten, kann man folgenden Befehl eingeben:
+
+    git tag
+
+
+File Branch/Merge <br>
+Wenn man ein Dokument oder Code auf Git bearbeiten möchte, aber dabei die Hauptdatei nicht überschreiben will macht man ein Branch (man nennt das Forken). Somit hat man wie eine Kopie vom Originalen und kann da soviel testen wie man will. <br>
+Wenn man nun den Branch mit dem Hauptfile (master) vereinen will, heisst dies ein Merge machen.
+
+<img src="https://nvie.com/img/main-branches@2x.png" alt="branch" width="300"/>
+
+
+
+SVN und CVS <br>
+
+
+Zentrale und verteilte SCM Lösungen <br>
+
+
+**Fazit und Aussicht** <br>
+Im M300 haben wir schon etwas mit git gearbeitet, doch jetzt konnte ich das ganze Thema mehr vertieft anschauen und besser verstehen.
+
+<br>
+
+
+## Kapitel: 701.1 Modern Software Development (Status: In Arbeit)
+
+**Weight**: 6
+
+**Beschreibung und Ziel** 
+ Candidates should be able to design software solutions suitable for modern runtime environments. Candidates should understand how services handle data persistence, sessions, status information, transactions, concurrency, security, performance, availability, scaling, load balancing, messaging, monitoring and APIs. Furthermore, candidates should understand the implications of agile and DevOps on software development.
+
+Key Knowledge Areas:
+* Understand and design service based applications
+* Understand common API concepts and standards <br>
+   <span style="color:blue">
+   ser
+* Understand aspects of data storage, service status and session handling
+* Design software to be run in containers
+* Design software to be deployed to cloud services
+* Awareness of risks in the migration and integration of monolithic legacy software
+* Understand common application security risks and ways to mitigate them
+* Understand the concept of agile software development
+* Understand the concept of DevOps and its implications to software developers and operators
+
+The following is a partial list of the used files, terms and utilities:
+* REST, JSON
+* Service Orientated Architectures (SOA)
+* Microservices
+* Immutable servers
+* Loose coupling
+* Cross site scripting, SQL injections, verbose error reports, API authentication, consistent enforcement of transport encryption
+* CORS headers and CSRF tokens
+* ACID properties and CAP theorem
+
+**Unterlagen**
+
+[![](https://img.youtube.com/vi/PH4HtZ8naWs/0.jpg)](https://www.youtube.com/watch?v=PH4HtZ8naWs)
+
+Microservices YouTube Einführung
+
+---
+
+
+**Beispiele und Arbeitsergebnisse**
+
+
+**Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+
+<br>
+
+## Kapitel: 702.2 Container Deployment and Orchestration (Status: In Arbeit)
+
+**Weight**: 5
+
+**Beschreibung und Ziel**  
+* Understand the architecture and application model Kubernetes
+* Define and manage a container-based application for Kubernetes, including the definition of Deployments, Services, ReplicaSets and Pods
+
+ 
+**Vorgehen** 
+
+<br>
+
+**Beispiele und Arbeitsergebnisse**
+| Linux          | Container      | Beschreibung      |
+| -------------- | -------------- | ----------------- |
+|    |   | 
+
+**Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+
+<br>
+
+## Kapitel: 704.1 Ansible (Status: In Arbeit)
+
+**Weight**: 8
+
+**Beschreibung und Ziel** 
+Key Knowledge Areas:
+* Understand the principles of automated system configuration and software installation
+* Create and maintain inventory files
+* Understand how Ansible interacts with remote systems
+* Manage SSH login credentials for Ansible, including using unprivileged login accounts
+* Create, maintain and run Ansible playbooks, including tasks, handlers, conditionals, loops and registers
+* Set and use variables
+* Maintain secrets using Ansible vaults
+* Write Jinja2 templates, including using common filters, loops and conditionals
+* Understand and use Ansible roles and install Ansible roles from Ansible Galaxy
+* Understand and use important Ansible tasks, including file, copy, template, ini_file, lineinfile, patch, replace, user, group, command, shell, service, systemd, cron, apt, debconf, yum, git, and debug
+* Awareness of dynamic inventory
+* Awareness of Ansibles features for non-Linux systems
+* Awareness of Ansible containers
+
+The following is a partial list of the used files, terms and utilities:
+* ansible.cfg
+* ansible-playbook
+* ansible-vault
+* ansible-galaxy
+* ansible-doc
+  
+
+**Vorgehen** 
+
+<br>
+
+**Beispiele und Arbeitsergebnisse**
+| Linux          | Container      | Beschreibung      |
+| -------------- | -------------- | ----------------- |
+|    |   | 
+
+**Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+
+<br>
+
+## Kapitel: 703.2 Cloud Deployment (Status: In Arbeit)
+
+**Weight**: 2
+
+**Beschreibung und Ziel**  
+
+**Vorgehen** 
+
+<br>
+
+**Beispiele und Arbeitsergebnisse**
+| Linux          | Container      | Beschreibung      |
+| -------------- | -------------- | ----------------- |
+|    |   | 
+
+**Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+
+<br>
+
+## Kapitel: 702.3 Container Infrastructure (Status: In Arbeit)
+
+**Weight**: 4
+
+**Beschreibung**
+* Flocker und flannel kennen
+* Service discovery Konzept verstehen
+* Grundwissen von CoreOS Container Linux, rkt und etcd
+* Sicherheitsrisiken von container Virtualisierung  und images verstehen und wie man sie migriert
+  
+<br>
 
 **Beispiele und Arbeitsergebnisse**
 
 | Linux          | Container      | Beschreibung      |
 | -------------- | -------------- | ----------------- |
-| Namespaces     | laufender Container | beim Starten des Containers wird in eine andere Linux Namespace gewechselt |
-| UnionFS        | Image Layer         | Container Verwenden UnionFileSysteme um .... |
-| Unix Prozesse  | run/start/stop      | docker run/start/stop Befehle ähneln dem .... Subsystem |
+|    |   | 
 
 **Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+
 
 ## Links
 
@@ -122,3 +231,8 @@ Kapitel aus E701 wurden in der Gruppe mit .... erarbeitet. Davon sind mindestens
 * [E701 Dokumentation](https://github.com/w901-fr19-mi/E701)
 * [myE701 Original Repository](https://github.com/w901-fr19-mi/myE701) 
 
+**Weitere nützliche Programme**
+
+* [Windows SSH Client, putty](https://putty.org)
+* [Grafischer Windows SFTP Client, Bitvise SSH Client](https://www.bitvise.com/ssh-client-download)
+* [Visual Studio Code](https://code.visualstudio.com/)

@@ -7,12 +7,12 @@ Beispiel für einen Aufbau einer Dokumention des Lern- und Entwicklungsprozesses
 
 | Datum | behandelte Unterrichtsinhalte: | Gewichtung |
 | -------- | ------ | -------- |
-| 15.05.19 | Installation SW, Einrichten Linux VM(s)<br> [701.3 Source Code Management](https://github.com/w901-fr19-mi/E701#7013-source-code-management)  | 5 |
-| 22.05.19 | [701.1 Modern Software Development](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 6 |
-| 29.05.19 | [702.2 Container Deployment and Orchestration](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 5 | 
-| 05.06.19 | [703.1 Virtual Machine Deployment](https://github.com/w901-fr19-mi/E701#7011-modern-software-development)  | 8 | 
-| 12.06.19 | [703.2 Cloud Deployment](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 2 |
-| 19.06.19 | [702.3 Container Infrastructure](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 4 |
+| 15.05.19 | Installation SW, Einrichten Linux VM(s)<br> [701.3 Source Code Management](https://github.com/nalmik/myE701#7013-source-code-management-status-in-arbeit)  | 5 |
+| 22.05.19 | [701.1 Modern Software Development](https://github.com/nalmik/myE701#7013-source-code-management-status-in-arbeit) | 6 |
+| 29.05.19 | [702.2 Container Deployment and Orchestration](https://github.com/nalmik/myE701#7013-source-code-management-status-in-arbeit) | 5 | 
+| 05.06.19 | [703.1 Virtual Machine Deployment](https://github.com/nalmik/myE701#7013-source-code-management-status-in-arbeit)  | 8 | 
+| 12.06.19 | [703.2 Cloud Deployment](https://github.com/nalmik/myE701#7013-source-code-management-status-in-arbeit) | 2 |
+| 19.06.19 | [702.3 Container Infrastructure](https://github.com/nalmik/myE701#7013-source-code-management-status-in-arbeit) | 4 |
 | 26.06.19 | LB1 Theoretische Prüfung und Abschluss LB2 | - |
 | 03.07.19 | Lehrerkonevent | - |
 | 10.07.19 | Sommersporttage | - |
@@ -121,9 +121,10 @@ In der git bash macht man zuerst ein "vagrant up". Dies dauert jedoch ein Weilch
 Beim lerncube Ordner gibt es ein batch File namens kubeps.bat das man starten kann. Wenn das erfolgreich durchgelaufen ist, kann man im offenen cmd folgende zwei Befehle eingeben:<br>
 kubectl create -f ./duk/osticket/osticket.yaml<br>
 kubectl create -f ./duk/osticket/mysql.yaml
+![Image](/images/osticket_deployment.JPG)
 
 Damit werden die Service osTicket und Mysql, da osTicket ja auch eine Datenbank benötigt, erstellt. Mit dem Befehl: "startsvc osticket" kann der Service dann gestartet werden.
-
+![Image](images/osticket_start.JPG)
 **Fazit und Aussicht**
 Ich hatte zuerst Probleme gehabt um herauszufinden, was ich als erstes machen muss, doch dann wenn ich reinkam ging das aufsetzen vom Dienst um einiges schneller als mit der klassischen Variante.
 

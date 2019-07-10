@@ -10,7 +10,7 @@ Beispiel für einen Aufbau einer Dokumention des Lern- und Entwicklungsprozesses
 | 15.05.19 | Installation SW, Einrichten Linux VM(s)<br> [701.3 Source Code Management](https://github.com/w901-fr19-mi/E701#7013-source-code-management)  | 5 |
 | 22.05.19 | [701.1 Modern Software Development](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 6 |
 | 29.05.19 | [702.2 Container Deployment and Orchestration](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 5 | 
-| 05.06.19 | [704.1 Ansible](https://github.com/w901-fr19-mi/E701#7011-modern-software-development)  | 8 | 
+| 05.06.19 | [703.1 Virtual Machine Deployment](https://github.com/w901-fr19-mi/E701#7011-modern-software-development)  | 8 | 
 | 12.06.19 | [703.2 Cloud Deployment](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 2 |
 | 19.06.19 | [702.3 Container Infrastructure](https://github.com/w901-fr19-mi/E701#7011-modern-software-development) | 4 |
 | 26.06.19 | LB1 Theoretische Prüfung und Abschluss LB2 | - |
@@ -26,25 +26,14 @@ Kapitel aus E701 wurden in der Gruppe mit .... erarbeitet. Davon sind mindestens
 
 **Weight**: 5
 
-**Beschreibung und Ziel** 
+**Beschreibung und Ziel** <br>
 Candidates should be able to use Git to manage and share source code. This includes creating and contributing to a repository as well as the usage of tags, branches and remote repositories. Furthermore, the candidate should be able to merge files and resolve merging conflicts.
-
-Key Knowledge Areas: 
-* Understand Git concepts and repository structure
-* Manage files within a Git repository
-* Manage branches and tags
-* Work with remote repositories and branches as well as submodules
-* Merge files and branches
-* Awareness of SVN and CVS, including concepts of centralized and distributed SCM solutions
-
-The following is a partial list of the used files, terms and utilities:
-* git
-* .gitignore
 
 **Beispiele und Arbeitsergebnisse** <br>
 Das Resultat kann man beim Schluss dieses Moduls erkennen, da ich laufend mit git arbeiten werde. Folgende Theorie Punkte werde ich genauer anschauen:
 
 Remote Repos
+
 
 Branches <br>
 Wenn man vom einer Hauptversion etwas testen will, kann man ein Branch machen. Das heisst es wird eine Kopie zusagen erstellt, bei dem man alles bearbeiten kann ohne dabei das Original zu verändern.
@@ -81,44 +70,29 @@ Im M300 haben wir schon etwas mit git gearbeitet, doch jetzt konnte ich das ganz
 **Weight**: 6
 
 **Beschreibung und Ziel** 
- Candidates should be able to design software solutions suitable for modern runtime environments. Candidates should understand how services handle data persistence, sessions, status information, transactions, concurrency, security, performance, availability, scaling, load balancing, messaging, monitoring and APIs. Furthermore, candidates should understand the implications of agile and DevOps on software development.
 
-Key Knowledge Areas:
-* Understand and design service based applications
-* Understand common API concepts and standards <br>
-   <span style="color:blue">
-   ser
-* Understand aspects of data storage, service status and session handling
-* Design software to be run in containers
-* Design software to be deployed to cloud services
-* Awareness of risks in the migration and integration of monolithic legacy software
-* Understand common application security risks and ways to mitigate them
-* Understand the concept of agile software development
-* Understand the concept of DevOps and its implications to software developers and operators
+API<br>
+API steht für Application Programmung Interface und besteht aus verschiedenen Tools. Das Ziel ist dabei eine Kommunikation zwischen Servicen oder Produkte zu ermöglichen unabhängig wie sie implentiert wurde.
 
-The following is a partial list of the used files, terms and utilities:
-* REST, JSON
-* Service Orientated Architectures (SOA)
-* Microservices
-* Immutable servers
-* Loose coupling
-* Cross site scripting, SQL injections, verbose error reports, API authentication, consistent enforcement of transport encryption
-* CORS headers and CSRF tokens
-* ACID properties and CAP theorem
+Microservices<br>
+Microservices sind von der Unix Welt, mit dem Gedanken das viele kleine Programme zusammenarbeiten können. Ein Program sollte nur für eine Aufgabe zugewiesen werden, die sie gut durchführen soll.
 
 **Unterlagen**
 
-[![](https://img.youtube.com/vi/PH4HtZ8naWs/0.jpg)](https://www.youtube.com/watch?v=PH4HtZ8naWs)
+* Microservices YouTube Einführung [![](https://img.youtube.com/vi/PH4HtZ8naWs/0.jpg)](https://www.youtube.com/watch?v=PH4HtZ8naWs)
 
-Microservices YouTube Einführung
+
+
+* [API](https://www.redhat.com/de/topics/api/what-are-application-programming-interfaces)
+
 
 ---
 
 
-**Beispiele und Arbeitsergebnisse**
+**Beispiele und Arbeitsergebnisse**<br>
+Das Praxis Beispiel von Kapitel 702.2 wäre auch ein passendes Beispiel zu diesem Kapitel.
 
-
-**Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+**Fazit und Aussicht**, Ich lernte nun endlich was genau ein API ist und wie Microservices genutz werden.
 
 <br>
 
@@ -127,61 +101,59 @@ Microservices YouTube Einführung
 **Weight**: 5
 
 **Beschreibung und Ziel**  
-* Understand the architecture and application model Kubernetes
-* Define and manage a container-based application for Kubernetes, including the definition of Deployments, Services, ReplicaSets and Pods
+ Kubernetes<br>
+ Kubernetes (auch K8s genannt) ist eine open-source Plattform. Damit kann man ein Cluster, welches mehrere Linux Container beinhaltet, managen oder auch eine Automatisierung zur bereitstellung  von Container Anwendungen und Skalierung davon ermöglicht. <br>
+K8s braucht ein OS auf dem es laufen kann und erhält von User Befehle, diese kommen zum Node der entscheidet welchen Pod den Befehl ausführen soll. Der Node gibt den Pods auch entsprechend Ressourcen. 
 
- 
-**Vorgehen** 
+<img src="https://www.redhat.com/cms/managed-files/kubernetes-diagram-2-824x437.png" alt="branch" width="500"/>
 
-<br>
-
-**Beispiele und Arbeitsergebnisse**
-| Linux          | Container      | Beschreibung      |
-| -------------- | -------------- | ----------------- |
-|    |   | 
-
-**Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+In K8s gibt es sogenannte Pods, dort sind Container-Anwendungen gruppiert. Die sind z.B. alle mit der gleichen IP ansprechbar. 
 
 <br>
 
-## Kapitel: 704.1 Ansible (Status: In Arbeit)
+**Beispiele und Arbeitsergebnisse**<br>
+Ich entscheide mich für die Übung osTicket für die Container Anwendung, da ich die Anwendung kenne und auch in ein anderen Modul aufsetzen musste. osTicket ist eine Plattform, welches man als Ticketing System benutzen kann.
 
-**Weight**: 8
+Vom Modul hier stand uns ein lernkube zur Verfügung, welche ich hier in auch benutzt habe. <br> [Zur Lernkube Installation](https://github.com/w901-fr19-mi/myE701#installation-kapitel-kann-in-der-kopie-gel%C3%B6scht-werden)<br>
+
+In der git bash macht man zuerst ein "vagrant up". Dies dauert jedoch ein Weilchen. Damit wird die VM master-01 erstellt.
+
+Beim lerncube Ordner gibt es ein batch File namens kubeps.bat das man starten kann. Wenn das erfolgreich durchgelaufen ist, kann man im offenen cmd folgende zwei Befehle eingeben:<br>
+kubectl create -f ./duk/osticket/osticket.yaml<br>
+kubectl create -f ./duk/osticket/mysql.yaml
+
+Damit werden die Service osTicket und Mysql, da osTicket ja auch eine Datenbank benötigt, erstellt. Mit dem Befehl: "startsvc osticket" kann der Service dann gestartet werden.
+
+**Fazit und Aussicht**
+Ich hatte zuerst Probleme gehabt um herauszufinden, was ich als erstes machen muss, doch dann wenn ich reinkam ging das aufsetzen vom Dienst um einiges schneller als mit der klassischen Variante.
+
+
+**Unterlagen**<br>
+* https://github.com/mc-b/M300/tree/master/40-Kubernetes#inhaltsverzeichnis
+* https://www.redhat.com/de/topics/containers/what-is-kubernetes#
+  
+<br>
+
+## Kapitel: 703.1 Virtual Machine Deployment (Status: In Arbeit)
+
+**Weight**: 4
 
 **Beschreibung und Ziel** 
-Key Knowledge Areas:
-* Understand the principles of automated system configuration and software installation
-* Create and maintain inventory files
-* Understand how Ansible interacts with remote systems
-* Manage SSH login credentials for Ansible, including using unprivileged login accounts
-* Create, maintain and run Ansible playbooks, including tasks, handlers, conditionals, loops and registers
-* Set and use variables
-* Maintain secrets using Ansible vaults
-* Write Jinja2 templates, including using common filters, loops and conditionals
-* Understand and use Ansible roles and install Ansible roles from Ansible Galaxy
-* Understand and use important Ansible tasks, including file, copy, template, ini_file, lineinfile, patch, replace, user, group, command, shell, service, systemd, cron, apt, debconf, yum, git, and debug
-* Awareness of dynamic inventory
-* Awareness of Ansibles features for non-Linux systems
-* Awareness of Ansible containers
-
-The following is a partial list of the used files, terms and utilities:
-* ansible.cfg
-* ansible-playbook
-* ansible-vault
-* ansible-galaxy
-* ansible-doc
+Ziel ist es zu wissen wie man das Aufsetzen Virtuelle Maschinen automatisieren kann mithilfe von configuration files. 
   
 
-**Vorgehen** 
+**Vorgehen**<br>
+Eine schnelle und saubere Variante ist Vagrant zu benutzen. Dafür benötigt man folgende Software: VirtualBox, Vagrant und git.
+Wenn man alles installiert hat, kann man entweder selber ein Vagrantfile erstellen oder ein schon vorgefertigtes nehmen. In dem Vagrantfile sind alle nötigen informationen der VM. Wenn man ein "Vagrant up" macht nimmt es die Info vom Vagrantfile und erstellt die VM. Durch "Vagrant destroy -f" kann man es wieder vernichten. Natürlich gibt es noch viel mehr Befehle auf Vagrant doch die werde ich nicht jede einzeln aufführen.
 
 <br>
 
-**Beispiele und Arbeitsergebnisse**
-| Linux          | Container      | Beschreibung      |
-| -------------- | -------------- | ----------------- |
-|    |   | 
+**Beispiele und Arbeitsergebnisse**<br>
+Unter diesem Link befindet sich ein von mir erstelltes Vagrantfile, welches eine VM mit Samba aufsetzten soll (leider funktioniert der Zugriff zum Share dort nicht ganz)
+https://github.com/nalmik/M300/blob/master/files/Vagrantfile
 
-**Fazit und Aussicht**, z.B. Die Durcharbeitung von ... gab mir ein besseres Verständnis über die Funktionsweise von Containern.
+**Fazit und Aussicht**<br>
+Ich konnte mein Wissen von M300 wieder auffrischen und repetierte welche Schritte man nochmals ausführen muss bei Vagrant. 
 
 <br>
 
